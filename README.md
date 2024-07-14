@@ -10,7 +10,7 @@ The ToDo List Application is a simple and user-friendly web-based application th
 - **Task Management**: Add, delete, and mark tasks as completed.
 - **Task Filtering**: Search tasks by name or category.
 - **Responsive Design**: Mobile-friendly interface using Bootstrap.
-- 
+  
 
 ## Technologies Used
 
