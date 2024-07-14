@@ -1,0 +1,100 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #67b9b9;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgb(239, 213, 225);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+}
+
+.task-text {
+    flex: 1; /* Takes remaining space */
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+}
+
+.button-group button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-left: 10px; /* Adjust spacing between buttons */
+}
+
+.button-group button img {
+    width: 20px; /* Adjust icon size as needed */
+    height: auto;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+
+
+.addTaskButton,
+.clearButton,
+.login,
+.signUp,
+.logout
+{
+    border-radius: 20px;
+    padding: 10px;
+    color: aliceblue;
+    border: none;
+    font-weight: bold;
+    width: 106px;
+}
+
+#taskInput, 
+#searchInput ,
+#dueDateInput, 
+#categoryInput,
+#email,
+#password,
+#signup-email,
+#signup-password,
+#confirm-password{
+    padding: 12px;
+    border-radius: 11px;
+    border: none;
+    margin-top: 10px;
+    width: calc(100% - 24px);
+    border:1px solid #a7d2df;
+}
+
+h2{
+    text-align: center;
+    color: #c63232;
+    text-shadow: 2px 2px 5px #918388;
+}
+
+body{
+    background-image:url('backgroundtodolist.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
+}
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+<div class="full-container">
+    <div class="container mt-5">
+        <div id="user-auth" class="card p-3">
+            <h2>Welcome</h2>
+            <form id="login-form" class="mb-3">
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control" placeholder="Password" required>
+                </div>
+                <button class="btn btn-primary w-100" type="submit">Login</button>
+            </form>
+            <form id="signup-form" class="mb-3">
+                <div class="form-group">
+                    <input type="email" id="signup-email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signup-password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirm-password" class="form-control" placeholder="Confirm Password" required>
+                </div>
+                <button class="btn btn-primary w-100" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div class="container mt-5" id="todo-container">
+        <div class="card p-3">
+            <h2>ToDo List</h2>
+            <div class="form-group">
+                <input type="text" id="taskInput" class="form-control" placeholder="Enter a new task">
+            </div>
+            <div class="form-group">
+                <input type="date" id="dueDateInput" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" id="categoryInput" class="form-control" placeholder="Enter a category/tag">
+            </div>
+            <button class="btn btn-success w-100 mb-2" onclick="addTask()">Add Task</button>
+            <button class="btn btn-danger w-100 mb-2" onclick="clearAll()">Clear All</button>
+            <div class="form-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search tasks" oninput="filterTasks()">
+            </div>
+            <ul id="taskList" class="list-group">
+                <!-- Tasks will be added dynamically here -->
+            </ul>
+            <button class="btn btn-secondary w-100 mt-3" onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+    <!--Firebase configuration-->
+    <script>
+        
+        // Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAMIi47s7C4gz8JJqxkEYCsot8RcGRhljI",
+          authDomain: "todolist-ba808.firebaseapp.com",
+          projectId: "todolist-ba808",
+          storageBucket: "todolist-ba808.appspot.com",
+          messagingSenderId: "997844024049",
+          appId: "1:997844024049:web:60afd080b5c9fa31308750"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+         // Add authentication instance
+        const auth = firebase.auth();
+    </script>
+    <script src="index.js"></script> 
+</body>
+</html>
